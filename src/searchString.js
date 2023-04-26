@@ -1,10 +1,10 @@
-const { hexToAscii } = require('./hexUtils');
+const { hexToAscii, stringToHex } = require('./hexUtils');
 
 function searchSampleString(corruptedData, sampleString) {
-  const asciiData = hexToAscii(corruptedData);
-  return asciiData.includes(sampleString);
+  const asciiToHex = stringToHex(sampleString);
+  return corruptedData.includes(asciiToHex);
 }
 
 module.exports = {
-  searchSampleString,
+  searchSampleString
 };
